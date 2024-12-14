@@ -8,6 +8,7 @@ https://playwright.dev/java/docs/intro
 
 # Comandos úteis:
 npx playwright --version   = Exibe a versão do Playwright instalado
+
 npx playwright codegen demo.playwright.dev/todomvc  =npx playwright code abre a tela do Inspector podendo auxiliar na identificação dos locators
 
 # Plugins de relatórios instalados (Reporters installed)
