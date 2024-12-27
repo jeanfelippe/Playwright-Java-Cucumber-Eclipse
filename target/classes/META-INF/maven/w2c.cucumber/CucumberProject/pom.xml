@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>w2c.cucumber</groupId>
+  <artifactId>CucumberProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+    <dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-java</artifactId>
+	    <version>7.4.1</version>
+	</dependency>
+	
+	
+	<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-testng</artifactId>
+	    <version>7.4.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+	<dependency>
+	    <groupId>tech.grasshopper</groupId>
+	    <artifactId>extentreports-cucumber7-adapter</artifactId>
+	    <version>1.7.0</version>
+	</dependency>
+	
+	   <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.30</version> <!-- Verifique a última versão estável -->
+        <scope>provided</scope>
+    </dependency>
+
+
+	
+  </dependencies>
+  
+  <build>
+        <plugins>
+            <!-- Outros plugins, como Maven Compiler Plugin -->
+            
+            <!-- Adicione o plugin para gerar relatórios JSON -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <systemPropertyVariables>
+                        <cucumber.options>--plugin json:target/cucumber-reports/Cucumber.json</cucumber.options>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            
+             <!-- Plugin para configurar o Lombok -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.10.1</version> <!-- Versão mais recente -->
+            <configuration>
+                <source>17</source> <!-- Altere para sua versão do JDK -->
+                <target>17</target> <!-- Altere para sua versão do JDK -->
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.18.30</version>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+        </plugins>
+    </build>
+  
+</project>

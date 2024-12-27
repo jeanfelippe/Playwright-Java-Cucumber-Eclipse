@@ -1,3 +1,4 @@
+@bvt
 Feature: Login Feature
   In order to perform successful login
   As a User

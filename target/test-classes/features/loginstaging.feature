@@ -1,3 +1,4 @@
+@staging
 Feature: Login Feature - Staging
   In order to perform successful login
   As a User
